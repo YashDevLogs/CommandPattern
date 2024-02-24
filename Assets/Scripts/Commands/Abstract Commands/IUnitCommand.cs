@@ -1,3 +1,4 @@
+using Command.Main;
 using Command.Player;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using UnityEngine;
 public abstract class UnitCommand : ICommand
 {
 
-    protected CommandData commandData;
+    public CommandData commandData;
 
     // References to the actor and target units, accessible by subclasses.
     protected UnitController actorUnit;
@@ -26,4 +27,6 @@ public abstract class UnitCommand : ICommand
     public void SetActorUnit(UnitController actorUnit) => this.actorUnit = actorUnit;
 
     public void SetTargetUnit(UnitController targetUnit) => this.targetUnit = targetUnit;
+
+ 
 }

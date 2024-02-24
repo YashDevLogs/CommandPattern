@@ -50,6 +50,7 @@ namespace Command.Player
             SetUsedState(UnitUsedState.NOT_USED);
         }
 
+
         public void StartUnitTurn()
         {
             unitView.SetUnitIndicator(true);
@@ -153,6 +154,7 @@ namespace Command.Player
 
         public void ResetUnitIndicator() => unitView.SetUnitIndicator(false);
 
+        public void ProcessUnitCommand(UnitCommand commandToProcess) => GameService.Instance.CommandInvoker.ProcessCommand(commandToProcess);
         public Vector3 GetEnemyPosition() 
         {
             if (Owner.PlayerID == 1)
@@ -173,4 +175,6 @@ namespace Command.Player
         ALIVE,
         DEAD
     }
+
+    
 }
